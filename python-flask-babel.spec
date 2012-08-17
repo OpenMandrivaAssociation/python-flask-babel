@@ -12,10 +12,12 @@ BuildArch:	noarch
 BuildRequires:	python-babel
 BuildRequires:	python-flask
 BuildRequires:	python-jinja2
+BuildRequires:  python-pytz
 BuildRequires:	python-speaklater
 Requires:	python-babel
 Requires:	python-flask
 Requires:	python-jinja2
+Requires:       python-pytz
 Requires:	python-speaklater
 %py_requires -d
 
