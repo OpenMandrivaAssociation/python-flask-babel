@@ -42,3 +42,11 @@ PYTHONPATH=$RPM_BUILD_ROOT/%{python_sitelib}:%{python_sitelib} make test
 %{python_sitelib}/*-nspkg.pth
 %{python_sitelib}/*.egg-info/
 %{python_sitelib}/flaskext/*.py*
+
+
+%changelog
+* Fri Aug 17 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.8-1
++ Revision: 815281
+- Import python-flask-babel
+- Import python-flask-babel
+
