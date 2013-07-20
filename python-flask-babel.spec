@@ -2,14 +2,14 @@
 
 Name:		python-flask-babel
 Version:	0.8
-Release:	1
+Release:	2
 Summary:	Adds i18n/l10n support to Flask applications
-Group:		Development/Python
 License:	BSD
 URL:		http://github.com/mitsuhiko/flask-babel/
 Source0:	http://pypi.python.org/packages/source/F/%{mod_name}/%{mod_name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-babel
+BuildRequires:	python-devel
 BuildRequires:	python-flask
 BuildRequires:	python-jinja2
 BuildRequires:  python-pytz
@@ -19,7 +19,6 @@ Requires:	python-flask
 Requires:	python-jinja2
 Requires:       python-pytz
 Requires:	python-speaklater
-%py_requires -d
 
 %description
 Adds i18n/l10n support to Flask applications with the help of the Babel
@@ -42,11 +41,3 @@ PYTHONPATH=$RPM_BUILD_ROOT/%{python_sitelib}:%{python_sitelib} make test
 %{python_sitelib}/*-nspkg.pth
 %{python_sitelib}/*.egg-info/
 %{python_sitelib}/flaskext/*.py*
-
-
-%changelog
-* Fri Aug 17 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.8-1
-+ Revision: 815281
-- Import python-flask-babel
-- Import python-flask-babel
-
