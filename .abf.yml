@@ -1,2 +1,4 @@
+removed_sources:
+  Flask-Babel-0.8.tar.gz: 69b6d7633cbcfb2b83ed3ff3b268ff87a0cc13ad
 sources:
-  "Flask-Babel-0.8.tar.gz": 69b6d7633cbcfb2b83ed3ff3b268ff87a0cc13ad
+  Flask-Babel-0.9.tar.gz: 977d3b152f876e06c215f6bb72616b4ce138fa49
