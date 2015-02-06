@@ -2,7 +2,7 @@
 
 Name:		python-flask-babel
 Version:	0.9
-Release:	1
+Release:	2
 Summary:	Adds i18n/l10n support to Flask applications
 
 Group:		Development/Python
