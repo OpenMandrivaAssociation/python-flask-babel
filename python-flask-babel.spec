@@ -37,14 +37,24 @@ Requires:	python-speaklater
 Adds i18n/l10n support to Flask applications with the help of the Babel
 library.
 
+%package -n python2-flask-babel
+
 %prep
 %setup -q -n %{mod_name}-%{version}
+
+cp -a . %py2dir
 
 %build
 python setup.py build
 
+pushd %py2dir
+python2 setup.py build
+
 %install
 python setup.py install --root %{buildroot}
+
+pushd %py2dir
+python2 setup.py install --root %{buildroot}
 
 # Disable tests - date-related tests may fail inside build nodes
 # %check
@@ -54,5 +64,10 @@ python setup.py install --root %{buildroot}
 %doc docs LICENSE PKG-INFO README
 %{py_puresitedir}/*.egg-info/
 %{py_puresitedir}/flask_babel
+
+%files -n python2-flask-babel
+%doc docs LICENSE PKG-INFO README
+%{py2_puresitedir}/*.egg-info/
+%{py2_puresitedir}/flask_babel
 
 
