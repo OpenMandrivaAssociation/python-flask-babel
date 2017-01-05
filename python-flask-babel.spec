@@ -2,7 +2,7 @@
 
 Name:		python-flask-babel
 Version:	0.9
-Release:	2
+Release:	3
 Summary:	Adds i18n/l10n support to Flask applications
 
 Group:		Development/Python
@@ -12,11 +12,20 @@ Source0:	http://pypi.python.org/packages/source/F/Flask-Babel/Flask-Babel-%{vers
 BuildArch:	noarch
 BuildRequires:	python-babel
 BuildRequires:	python-devel
-BuildRequires:	python-distribute
+BuildRequires:	python-setuptools
 BuildRequires:	python-flask
 BuildRequires:	python-jinja2
 BuildRequires:  python-pytz
 BuildRequires:	python-speaklater
+
+BuildRequires:	python2-babel
+BuildRequires:  python2-devel
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-flask
+BuildRequires:  python2-jinja2
+BuildRequires:  python2-pytz
+BuildRequires:  python2-speaklater
+
 Requires:	python-babel
 Requires:	python-flask
 Requires:	python-jinja2
@@ -28,14 +37,24 @@ Requires:	python-speaklater
 Adds i18n/l10n support to Flask applications with the help of the Babel
 library.
 
+%package -n python2-flask-babel
+
 %prep
 %setup -q -n %{mod_name}-%{version}
+
+cp -a . %py2dir
 
 %build
 python setup.py build
 
+pushd %py2dir
+python2 setup.py build
+
 %install
 python setup.py install --root %{buildroot}
+
+pushd %py2dir
+python2 setup.py install --root %{buildroot}
 
 # Disable tests - date-related tests may fail inside build nodes
 # %check
@@ -45,5 +64,10 @@ python setup.py install --root %{buildroot}
 %doc docs LICENSE PKG-INFO README
 %{py_puresitedir}/*.egg-info/
 %{py_puresitedir}/flask_babel
+
+%files -n python2-flask-babel
+%doc docs LICENSE PKG-INFO README
+%{py2_puresitedir}/*.egg-info/
+%{py2_puresitedir}/flask_babel
 
 
