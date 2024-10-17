@@ -7,7 +7,7 @@ Summary:	Adds i18n/l10n support to Flask applications
 
 Group:		Development/Python
 License:	BSD
-URL:		http://github.com/mitsuhiko/flask-babel/
+URL:		https://github.com/mitsuhiko/flask-babel/
 Source0:	http://pypi.python.org/packages/source/F/Flask-Babel/Flask-Babel-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-babel
