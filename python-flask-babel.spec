@@ -2,7 +2,7 @@
 %bcond_with python2
 Name:		python-flask-babel
 Version:	2.0.0
-Release:	2
+Release:	3
 Summary:	Adds i18n/l10n support to Flask applications
 
 Group:		Development/Python
