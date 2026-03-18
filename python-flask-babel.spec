@@ -5,13 +5,13 @@
 
 Name:		python-flask-babel
 Version:	4.1.0
-Release:	1
+Release:	2
 Summary:	Adds i18n/l10n support to Flask applications
 License:	BSD-3-Clause
 Group:		Development/Python
 URL:		https://github.com/python-babel/flask-babel
 Source0:	%{URL}/archive/v%{version}/%{name}-%{version}.tar.gz
-# For patch into see this PR: https://github.com/python-babel/flask-babel/pull/242
+# For patch info see this PR: https://github.com/python-babel/flask-babel/pull/242
 Patch0:		00-fix-list-translations-ordering-in-tests.patch
 
 BuildSystem:	python
@@ -39,7 +39,7 @@ Adds i18n/l10n support to Flask applications with the help of the Babel library.
 
 %if %{with docs}
 %build -a
-make -C docs html
+PYTHONPATH="%{buildroot}%{python_sitelib}:${PWD}" make -C docs html
 rm -rf docs/_build/html/.buildinfo
 %endif
 
