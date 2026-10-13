@@ -1,11 +1,11 @@
 %define module flask-babel
 %define oname flask_babel
 %bcond tests 1
-%bcond docs 1
+%bcond docs 0
 
 Name:		python-flask-babel
 Version:	4.1.0
-Release:	2
+Release:	3
 Summary:	Adds i18n/l10n support to Flask applications
 License:	BSD-3-Clause
 Group:		Development/Python
